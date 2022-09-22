@@ -10,28 +10,16 @@
 
 ############# DON'T REMOVE THIS FUNCTIONS #############
 
-
-import sys, os, random
+import sys, os, datetime
 
 #---- MODULE RICH IN PYTHON -------
 from rich import print as prints
+from datetime import datetime
 from rich.panel import Panel
-rc = random.choice
 
-###---[ WARNA RICH ]---###
-Z2 = "[#000000]" # HITAM
-M2 = "[#FF0000]" # MERAH
-H2 = "[#00FF00]" # HIJAU
-K2 = "[#FFFF00]" # KUNING
-B2 = "[#00C8FF]" # BIRU
-U2 = "[#AF00FF]" # UNGU
-N2 = "[#FF00FF]" # PINK
-C2 = "[#00FFFF]" # BIRU MUDA
-P2 = "[bold white]" # PUTIH
-J2 = "[#FF8F00]" # JINGGA
-A2 = "[#AAAAAA]" # ABU-ABU
-ran_rich = rc([H2,J2,U2,J2])
-ran_rich1= rc([A2,B2,A2])
+reed = "[bold red]"
+blue = "[bold blue]"
+
 class Logo:
 
     def __init__(self):
@@ -44,13 +32,18 @@ class Logo:
         else:
             try:os.system("clear")
             except:pass
-        self.log()
-
-    def log(self):
-        prints(Panel(f"""{ran_rich}   ██████{C2}╗{ran_rich1}░{ran_rich}██████{C2}╗{ran_rich1}░{ran_rich}██{C2}╗{ran_rich1}░░░{ran_rich}██{C2}╗{ran_rich}████████{C2}╗{ran_rich}███████{C2}╗ {ran_rich} ███████{C2}╗{ran_rich}██████{C2}╗{ran_rich1}░[/]
-   {ran_rich}██{C2}╔══{ran_rich}██{C2}╗{ran_rich}██{C2}╔══{ran_rich}██{C2}╗{ran_rich}██{C2}║{ran_rich1}░░░{ran_rich}██{C2}║╚══{ran_rich}██{C2}╔══╝{ran_rich}██{C2}╔════╝ {ran_rich} ██{C2}╔════╝{ran_rich}██{C2}╔══{ran_rich}██{C2}╗
-   {ran_rich}██████{C2}╦╝{ran_rich}██████{C2}╔╝{ran_rich}██{C2}║{ran_rich1}░░░{ran_rich}██{C2}║{ran_rich1}░░░{ran_rich}██{C2}║{ran_rich1}░░░{ran_rich}█████{C2}╗{ran_rich1}░░{ran_rich}  █████{C2}╗{ran_rich1}░░{ran_rich}██████{C2}╦╝
-   {ran_rich}██{C2}╔══{ran_rich}██{C2}╗{ran_rich}██{C2}╔══{ran_rich}██{C2}╗{ran_rich}██{C2}║{ran_rich1}░░░{ran_rich}██{C2}║{ran_rich1}░░░{ran_rich}██{C2}║{ran_rich1}░░░{ran_rich}██{C2}╔══╝{ran_rich1}░░{ran_rich}  ██{C2}╔══╝{ran_rich1}░░{ran_rich}██{C2}╔══{ran_rich}██{C2}╗
-   {ran_rich}██████{C2}╦╝{ran_rich}██{C2}║{ran_rich1}░░{ran_rich}██{C2}║╚{ran_rich}██████{C2}╔╝{ran_rich1}░░░{ran_rich}██{C2}║{ran_rich1}░░░{ran_rich}███████{C2}╗ {ran_rich} ██{C2}║{ran_rich1}░░░░░{ran_rich}██████{C2}╦╝
-   {C2}╚═════╝{ran_rich1}░{C2}╚═╝{ran_rich1}░░{C2}╚═╝{ran_rich1}░{C2}╚═════╝{ran_rich1}░░░░{C2}╚═╝{ran_rich1}░░░{C2}╚══════╝  ╚═╝{ran_rich1}░░░░░{C2}╚═════╝{ran_rich1}░
-        {P2}Selamat datang di script brute {B2}facebook{P2} version {K2}4{P2}.{K2}7{P2}""",padding=(0,8),style="bold white"))
+        prints(Panel(f"""{blue} ____             _         ______                  {reed} ______ ____  
+{blue}|  _ \           | |       |  ____|                 {reed}|  ____|  _ \ 
+{blue}| |_) |_ __ _   _| |_ ___  | |__ ___  _ __ ___ ___  {reed}| |__  | |_) |
+{blue}|  _ <| '__| | | | __/ _ \ |  __/ _ \| '__/ __/ _ \ {reed}|  __| |  _ < 
+{blue}| |_) | |  | |_| | ||  __/ | | | (_) | | | (_|  __/ {reed}| |    | |_) |
+{blue}|____/|_|   \__,_|\__\___| |_|  \___/|_|  \___\___| {reed}|_|    |____/ 
+                        {reed}BY Yayan XD. @2022""", style="bold white", width=70, title=f"[cyan]{self.waktu()}"))
+    def waktu(self):
+        now = datetime.now()
+        hours = now.hour
+        if 4 <= hours < 12:timenow = "good morning"
+        elif 12 <= hours < 15:timenow = "good afternoog"
+        elif 15 <= hours < 18:timenow = "good evening"
+        else:timenow = "good night"
+        return timenow
